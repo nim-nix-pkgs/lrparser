@@ -1,5 +1,5 @@
 {
-  description = ''A SLR parser written in Nim with compile-time and run-time grammar generation.'';
+  description = ''An SLR Parser and Tokenizer'';
 
   inputs.flakeNimbleLib.owner = "riinr";
   inputs.flakeNimbleLib.ref   = "master";
@@ -9,7 +9,7 @@
   
   inputs.src-lrparser-master.flake = false;
   inputs.src-lrparser-master.owner = "vanyle";
-  inputs.src-lrparser-master.ref   = "refs/heads/master";
+  inputs.src-lrparser-master.ref   = "master";
   inputs.src-lrparser-master.repo  = "lrparser";
   inputs.src-lrparser-master.type  = "github";
   
