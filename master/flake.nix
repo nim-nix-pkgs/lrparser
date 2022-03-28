@@ -11,7 +11,6 @@
   inputs.src-lrparser-master.ref   = "refs/heads/master";
   inputs.src-lrparser-master.owner = "vanyle";
   inputs.src-lrparser-master.repo  = "lrparser";
-  inputs.src-lrparser-master.dir   = "";
   inputs.src-lrparser-master.type  = "github";
   
   outputs = { self, nixpkgs, flakeNimbleLib, ...}@deps:
