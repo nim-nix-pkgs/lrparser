@@ -1,0 +1,29 @@
+name: Generating Documentation
+on: [push]
+
+jobs:
+  Documentation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      
+      - name: Setup nim
+        uses: jiro4989/setup-nim-action@v1
+        with:
+          nim-version: '1.4.0'
+
+      - name: Generate the documentation
+        run: nim doc --project --index:on --outdir:docs src/lrparser.nim
+
+      - name: Save the documentation
+        uses: actions/upload-artifact@v2
+        with:
+          name: documentation
+          path: docs
+
+      - name: GitHub Pages action
+        uses: peaceiris/actions-gh-pages@v3.6.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs
